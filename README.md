@@ -197,7 +197,7 @@ Five additional support ticket descriptions not used in model training were test
 
 The project follows the company-provided final folder structure:
 
-```
+```text
 AI_Assignment_Avik_Bhattacharya/
 │
 ├── data/
@@ -208,9 +208,9 @@ AI_Assignment_Avik_Bhattacharya/
 │
 ├── screenshots/
 │   ├── category_distribution.png
+│   ├── confusion_matrix.png
 │   ├── priority_distribution.png
-│   ├── status_distribution.png
-│   └── confusion_matrix.png
+│   └── status_distribution.png
 │
 ├── src/
 │   ├── preprocessing.py
@@ -218,8 +218,9 @@ AI_Assignment_Avik_Bhattacharya/
 │   ├── predict.py
 │   └── app.py
 │
-├── requirements.txt
+├── .gitignore
 ├── README.md
+├── requirements.txt
 └── report.pdf
 ```
 
@@ -233,8 +234,11 @@ AI_Assignment_Avik_Bhattacharya/
 - PowerShell
 
 ### 2. Navigate to the Project Directory
+
+Open PowerShell and navigate to the directory where you have downloaded or cloned the project.
+
 ```powershell
-cd d:\AI_Assignment_Avik_Bhattacharya
+cd path\to\AI_Assignment_Avik_Bhattacharya
 ```
 
 ### 3. Create and Activate Virtual Environment
