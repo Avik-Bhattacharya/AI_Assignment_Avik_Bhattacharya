@@ -1,0 +1,251 @@
+ticket_id,ticket_description,category,priority,status
+T001,OAuth token refresh failure causes intermittent logouts throughout the workday.,Login Issue,Medium,In Progress
+T002,Error dialog 'Failed to decrypt secure payload' appears when opening encrypted messages.,Application Error,Medium,Closed
+T003,Please update the primary billing contact email address to accounting@company.com.,Account Update,Low,In Progress
+T004,Request to enable multi-factor authentication enforcement across all company user accounts.,Account Update,Medium,Open
+T005,"Captcha challenge fails to render on the login page, preventing form submission.",Login Issue,Medium,Closed
+T006,Please cancel the pending account deletion request submitted by mistake by team administrator.,Account Update,Low,In Progress
+T007,Custom report template saved by department head is not visible to other team members.,Report,High,In Progress
+T008,User retention cohort analysis report shows zero retention for all cohorts after week 4.,Report,High,Open
+T009,Please change the account billing cycle from monthly billing to annual invoicing.,Account Update,Low,In Progress
+T010,Two-factor authentication SMS code is never delivered to my registered mobile phone.,Login Issue,Medium,Open
+T011,"Bulk delete operation failed halfway through, leaving orphaned records in the database.",Application Error,Medium,Open
+T012,Getting '403 Forbidden: User not authorized' when trying to access the member portal after login.,Login Issue,High,Open
+T013,User is prompted for 2FA on every single page load instead of remembering the trusted device.,Login Issue,Low,Closed
+T014,Encountering 'KeyError: transaction_id' in backend processing logs during checkout.,Application Error,High,In Progress
+T015,Weekly employee timesheet report calculates overtime hours incorrectly for weekend shifts.,Report,Medium,Closed
+T016,"Password expiration reminder was never sent, resulting in sudden lockout on project deadline day.",Login Issue,Low,Closed
+T017,Export to Excel throws 'XML parsing error: illegal character entity' on international names.,Application Error,High,In Progress
+T018,Attempting to merge two customer records throws 'Unhandled Promise Rejection: Timeout'.,Application Error,Low,Closed
+T019,Submitting ticket with emojis in the title causes backend database UTF-8 encoding crash.,Application Error,High,Open
+T020,Federated login via Apple ID fails with 'Authorization response missing user identity token'.,Login Issue,High,Open
+T021,Please transfer our remaining prepaid account credits to our secondary branch workspace.,Account Update,Medium,Open
+T022,Rendering interactive geographical heat map freezes the browser window for several seconds.,Performance,Medium,Closed
+T023,Generating barcode labels in bulk causes the print spooler service to lock up completely.,Performance,High,In Progress
+T024,Unexpected error dialog pops up whenever uploading a PDF attachment greater than 2MB.,Application Error,High,In Progress
+T025,"Logged in successfully, but redirected to an unstyled 404 page instead of dashboard.",Application Error,High,In Progress
+T026,Vendor performance scorecard report omits suppliers with fewer than 10 purchase orders.,Report,High,In Progress
+T027,The customer acquisition cost (CAC) graph shows negative values for the month of August.,Report,Medium,Open
+T028,Image thumbnail generation takes up to 30 seconds per uploaded avatar.,Performance,Medium,Open
+T029,Authentication cookie is rejected by browser due to missing SameSite attribute.,Login Issue,Medium,Open
+T030,Exporting the Q3 inventory report to CSV results in a corrupted file with misaligned columns.,Report,High,Open
+T031,Page load times for the inventory table degrade dramatically when sorting by custom columns.,Performance,Low,Closed
+T032,"Password field pastes extra invisible characters from password manager, causing login failure.",Login Issue,High,In Progress
+T033,Cannot log in from remote office IP address; suspected IP geolocation block.,Login Issue,Medium,In Progress
+T034,Monthly sales summary report is missing transactions completed on the last day of the month.,Report,Low,Open
+T035,Update preferred account currency from USD to EUR for our European branch billing.,Account Update,Medium,Closed
+T036,Request to extend account evaluation trial period by 14 days for procurement review.,Account Update,Medium,In Progress
+T037,Request to merge two duplicate employee account profiles into a single primary account.,Account Update,Medium,In Progress
+T038,Tax compliance summary report fails to separate state and municipal sales tax collections.,Report,High,Open
+T039,Getting an 'Invalid credentials' error message even though I reset my password ten minutes ago.,Login Issue,Low,Closed
+T040,Customer lifetime value (LTV) report calculation includes cancelled and refunded transactions.,Report,Medium,In Progress
+T041,File export utility throws 'NullReferenceException' when table contains null values.,Application Error,Medium,In Progress
+T042,Table pagination controls break and display 'NaN of undefined' when clicking next page.,Application Error,High,Closed
+T043,Scheduled weekly digest email contains broken image links where chart graphics should be.,Report,High,In Progress
+T044,Account locked out due to multiple failed login attempts; please unlock it.,Login Issue,Low,Open
+T045,Update custom subdomain URL from oldbrand.app.com to newbrand.app.com.,Account Update,Medium,Open
+T046,Request to deactivate auto-renewal feature on our current subscription plan.,Account Update,Low,Open
+T047,Unable to change our physical office mailing address under the company profile settings.,Account Update,High,Open
+T048,Need to reset API secret keys and generate new webhook authentication tokens.,Account Update,High,In Progress
+T049,Sales pipeline report excludes opportunities marked as 'Pending Signature' unexpectedly.,Report,High,In Progress
+T050,Cannot log in using GitHub OAuth; returns 'Internal error during authorization handshake'.,Login Issue,Low,Closed
+T051,Google single sign-on redirect loop keeps sending me back to the welcome page without logging in.,Login Issue,High,Open
+T052,Update shipping address for physical hardware token delivery to our remote branch office.,Account Update,Low,Open
+T053,Mobile application freezes momentarily every time a new push notification arrives.,Performance,Low,In Progress
+T054,System threw a 504 Gateway Timeout when executing search on large customer database.,Application Error,Medium,Open
+T055,Need to change the primary domain associated with our workspace following our company rebrand.,Account Update,Medium,In Progress
+T056,CPU utilization on the web application tier reaches 100 percent during daily email campaign launches.,Performance,Low,In Progress
+T057,Login screen freezes on a blank white page after entering email on Safari browser.,Login Issue,High,Closed
+T058,Automated billing reconciliation report fails to generate when discounts are 100 percent.,Report,Low,Open
+T059,Cannot sign in via Okta SAML integration; error states 'SAML response signature verification failed'.,Login Issue,Low,Open
+T060,Password reset link received in email expires immediately upon clicking.,Login Issue,High,Closed
+T061,Quarterly product roadmap progress report displays outdated milestone completion percentages.,Report,Medium,Open
+T062,Background job queue stalled due to corrupted message in Redis broker.,Application Error,Low,Closed
+T063,The inventory aging report is pulling stale data cached from two weeks ago.,Report,Medium,Open
+T064,Contractor cannot log in using guest email invite sent from project workspace.,Login Issue,High,In Progress
+T065,Login fails with 'CSRF token mismatch' error when trying to authenticate via Firefox private window.,Login Issue,Low,Closed
+T066,Add purchase order (PO) number requirement to all future automated subscription renewals.,Account Update,Low,In Progress
+T067,Two-factor backup recovery codes are reported as invalid during emergency login attempt.,Login Issue,Low,Open
+T068,Ad-hoc query report returns duplicate rows when joining customer orders with shipping tables.,Report,High,Closed
+T069,Request to whitelist corporate IP range 192.168.1.0/24 on our account security settings.,Account Update,High,Open
+T070,Daily warehouse fulfillment report failed to run this morning; no email alert was triggered.,Report,Low,In Progress
+T071,"Single Sign-On certificate has expired, blocking all company employees from accessing the portal.",Login Issue,Medium,Closed
+T072,Request to add department-level cost breakdown filters to the SaaS usage report.,Report,Medium,Closed
+T073,Requesting a customized executive dashboard report showing regional conversion rates.,Report,Low,Closed
+T074,User credentials work fine on the desktop web app but fail completely on the Android mobile app.,Login Issue,Low,In Progress
+T075,Kanban board drag-and-drop feature corrupts card order and displays an error toast.,Application Error,Low,Closed
+T076,Unable to bypass biometric prompt when Touch ID sensor is broken on user laptop.,Login Issue,High,Open
+T077,Monthly active users (MAU) metric displays conflicting numbers across two reporting dashboards.,Report,Medium,Open
+T078,Report scheduling interface will not save custom cron schedule for bi-weekly Monday runs.,Report,Low,Open
+T079,Session drops and logs me out every 5 minutes while actively typing in forms.,Login Issue,Medium,Open
+T080,Update notification preferences: disable promotional emails while keeping security alerts active.,Account Update,Low,Closed
+T081,Payment gateway integration throws 'Error 422 Unprocessable Entity: Currency code missing'.,Application Error,Medium,Open
+T082,Infinite scroll on the product catalog causes severe stuttering and frame drops on Chrome.,Performance,Medium,In Progress
+T083,CSV import tool crashes silently without showing error message or importing any records.,Application Error,High,Closed
+T084,Exporting large transactional report to PDF truncates right-most columns from the printed page.,Report,Medium,Open
+T085,"Dashboard widget queries execute sequentially instead of concurrently, quadrupling total load time.",Performance,Low,Open
+T086,Login prompt keeps asking for domain credentials instead of email address.,Login Issue,Low,In Progress
+T087,Please transfer project ownership and repository rights from personal account to organization.,Account Update,High,In Progress
+T088,Error 'Failed to allocate dynamic buffer' appears when previewing 4K video files.,Application Error,High,Open
+T089,High memory consumption on desktop client causes machine fan to run continuously at full speed.,Performance,High,Open
+T090,Bulk record import of 500 items is taking more than two hours to process in the background.,Performance,Low,In Progress
+T091,Requesting deletion of inactive contractor accounts in accordance with data retention policy.,Account Update,Medium,In Progress
+T092,Need to split our multi-seat account into two independent departmental billing entities.,Account Update,Medium,Open
+T093,Need a one-time historical report of all deleted customer records over the last 12 months.,Report,Low,Open
+T094,Error message says 'User does not exist' for an active employee who logged in yesterday.,Login Issue,Medium,Open
+T095,Need to change the account recovery email address to an active distribution list.,Account Update,Low,In Progress
+T096,WebSocket connection experiences high packet loss and latency on mobile networks.,Performance,Low,In Progress
+T097,The marketing attribution report credits all conversions to direct traffic instead of paid ads.,Report,High,In Progress
+T098,Clicking the 'Print Receipt' button triggers an uncaught JavaScript error in the browser console.,Application Error,High,In Progress
+T099,Mobile app battery drain is unusually high while running in background on iOS devices.,Performance,High,Closed
+T100,Exported CSV report contains scientific notation instead of full 16-digit order tracking numbers.,Report,Medium,Closed
+T101,Azure AD integration returns 'AADSTS50011: The reply URL specified does not match'.,Login Issue,Low,Open
+T102,Login button remains greyed out and unclickable even after filling in both email and password.,Login Issue,Low,In Progress
+T103,Accounts receivable aging report shows paid invoices as 90+ days overdue.,Report,Low,Open
+T104,Application crashes with 'Fatal error: memory limit of 512M exhausted' on report preview.,Application Error,Medium,Open
+T105,Unable to switch accounts using the multi-tenant login dropdown menu.,Login Issue,High,Closed
+T106,Chart legend on the quarterly expenditure report overlaps with the bar graph labels.,Report,Low,Open
+T107,Application generates duplicate invoice numbers when two users click submit simultaneously.,Application Error,High,In Progress
+T108,Need to add five additional team member seats to our enterprise annual subscription.,Account Update,Low,Open
+T109,Opening the notification center modal causes significant animation frame drop.,Performance,High,In Progress
+T110,Filter changes on the transaction ledger take 15 seconds to re-render the table.,Performance,Low,Closed
+T111,Magic link login returns 'Token invalid or already consumed' on first click.,Login Issue,Low,Closed
+T112,System throughput drops drastically when more than 50 concurrent agents are online.,Performance,Medium,Closed
+T113,File compression step during backup archive creation slows down primary application operations.,Performance,Low,Open
+T114,Application crashed with segmentation fault in background image processing worker.,Application Error,Low,Closed
+T115,Need to assign administrator privileges to three senior security team members.,Account Update,High,Closed
+T116,Loading the team settings page is blocked by multiple slow synchronous external API calls.,Performance,High,In Progress
+T117,Dropdown menu closes instantly before user can select an option on touchscreen laptops.,Application Error,High,Closed
+T118,Unable to reset password because security questions were reset during system upgrade.,Login Issue,Medium,In Progress
+T119,Opening customer profile page with large conversation history causes browser tab memory to exceed 1.5GB.,Performance,High,Closed
+T120,Request to designate a backup billing contact in case the primary account owner is unavailable.,Account Update,High,Closed
+T121,User profile displays incorrect phone number; cannot edit field as it appears locked.,Account Update,Low,Open
+T122,Need to transfer organization ownership to our new IT department operations lead.,Account Update,High,Open
+T123,"Redis cache hit ratio dropped to 30 percent, causing database server load to spike to 95 percent.",Performance,Low,In Progress
+T124,API response latency has increased from 150ms to over 3200ms for the /products endpoint.,Performance,High,In Progress
+T125,Employee transferred to European division; please update account region and data residency.,Account Update,High,Closed
+T126,Need to add custom tags and product category filters to the standard marketing ROI report.,Report,High,Closed
+T127,Search index synchronization lag causes newly created tickets to take 15 minutes to appear in search.,Performance,Low,Closed
+T128,Funnel conversion analytics report does not count users who navigate backwards in checkout.,Report,Low,In Progress
+T129,User profile image upload fails with '413 Payload Too Large' despite image being under limit.,Application Error,Medium,Open
+T130,User cannot update their custom signature line in the customer support response tool.,Account Update,High,Closed
+T131,High network payload size: home page initial bundle download is 18MB uncompressed.,Performance,Low,In Progress
+T132,Error 'Account disabled by administrator' appearing for a manager returning from approved leave.,Account Update,Low,In Progress
+T133,User profile job title and department need to be updated following internal promotion.,Account Update,Low,Closed
+T134,Document rendering pipeline takes excessive time converting docx files into web previews.,Performance,High,Closed
+T135,Change default language and regional time zone preferences for our Asia-Pacific team.,Account Update,High,Open
+T136,WebSocket connection terminated unexpectedly with code 1006 during live data streaming.,Application Error,Medium,Closed
+T137,Mobile app displays 'Network error: Unable to reach authentication server' only on cellular data.,Login Issue,Medium,Open
+T138,Encountered 'CORS policy blocked access' error in console when calling third-party widget.,Application Error,Low,In Progress
+T139,Inventory reorder forecasting report projects negative demand for seasonal product lines.,Report,High,Closed
+T140,Encountered 'SSL handshake failed' when application connects to external webhooks.,Application Error,Low,Closed
+T141,Password field does not accept special characters required by our corporate password policy.,Login Issue,Low,In Progress
+T142,System does not allow logging in with passwords longer than 32 characters.,Login Issue,High,Closed
+T143,The SLA compliance percentage on the monthly support scorecard does not update in real time.,Report,High,Open
+T144,Application UI experiences stutter and jitter when scrolling through 50+ row data tables.,Performance,Low,Open
+T145,Failed to fetch customer data: API endpoint returned 502 Bad Gateway during checkout.,Application Error,Low,In Progress
+T146,The payroll summary report omits bonuses disbursed through off-cycle payroll runs.,Report,High,In Progress
+T147,Need historical comparison charts added to the monthly customer satisfaction (CSAT) report.,Report,Medium,Closed
+T148,Report builder tool does not allow grouping data by custom user metadata fields.,Report,Low,Closed
+T149,Notification bell icon triggers infinite spinner and throws 503 Service Unavailable.,Application Error,Medium,Closed
+T150,High latency observed in cross-region database read replica synchronization.,Performance,High,Closed
+T151,Update accounts payable invoice delivery address to our outsourced accounting firm.,Account Update,High,Open
+T152,Modal dialog freezes and becomes unresponsive when switching tabs in the settings menu.,Application Error,Low,Open
+T153,Rich text editor strips out all HTML formatting and throws a parsing exception on save.,Application Error,Low,Closed
+T154,Remove an ex-employee from all shared departmental workspaces and revoke cloud licenses.,Account Update,Low,Open
+T155,Requesting access to beta features program for our development and testing team accounts.,Account Update,High,In Progress
+T156,Request to export raw event telemetry log report for third-party business intelligence tools.,Report,High,Closed
+T157,Need to update the VAT registration number displayed on our past three monthly invoices.,Account Update,Low,Open
+T158,Application state desynchronized: items added to cart disappear upon page reload.,Application Error,Medium,Closed
+T159,Need a breakdown report of energy consumption per server rack in our primary data center.,Report,Low,Open
+T160,"Update default payment method: credit card on file has expired, please register new corporate card.",Account Update,Low,In Progress
+T161,User receives 'Too many requests: Please try again later' after just one login attempt.,Login Issue,High,Open
+T162,Network requests to /api/v1/metrics keep failing due to strict 5000ms client-side timeout.,Performance,Low,In Progress
+T163,Financial variance report totals do not match the sum of individual line item amounts.,Report,Low,In Progress
+T164,Slow disk I/O on database host causes write queries to queue up during end-of-month closing.,Performance,Low,Closed
+T165,Account activation link sent to new hire expired before they could set up their initial password.,Login Issue,High,Open
+T166,Executive report email delivery bounced because file attachment exceeded 25MB mail server limit.,Report,High,Open
+T167,Search bar query with special character '&' results in an unhandled 400 Bad Request error.,Application Error,Low,In Progress
+T168,The customer churn analytics chart does not reflect the selected date range filters.,Report,Medium,Open
+T169,Form validation highlights correct email address as invalid and blocks submission.,Application Error,Medium,Open
+T170,PDF generation for annual tax summary times out and displays an empty white document.,Report,High,Open
+T171,Automated email dispatcher threw 'ConnectionRefusedError: Port 587 unreachable'.,Application Error,Low,Closed
+T172,Sales commission summary report does not apply updated commission tier percentages.,Report,Medium,Open
+T173,Clicking 'Download All' creates an empty zip file containing 0 bytes.,Application Error,Medium,Closed
+T174,QR code for setting up Microsoft Authenticator refuses to scan on the mobile camera.,Login Issue,High,In Progress
+T175,Requesting temporary suspension of our team account during upcoming corporate office relocation.,Account Update,High,Open
+T176,The main analytics dashboard takes over 45 seconds to load during peak morning hours.,Performance,Low,Open
+T177,Please reactivate the user account for employee returning from sabbatical leave.,Account Update,Medium,Open
+T178,File upload speeds are throttled below 50 KB/s despite user having a 500 Mbps connection.,Performance,Low,Closed
+T179,Update emergency contact information and notification phone numbers on system admin profile.,Account Update,High,In Progress
+T180,Cold start latency for serverless functions handling image resizing exceeds 8 seconds.,Performance,Medium,Open
+T181,Unable to export compliance audit report to Excel due to row count exceeding maximum limits.,Report,High,Closed
+T182,System throws 'IndexOutOfBoundsException' when filtering records by custom fiscal year.,Application Error,Low,In Progress
+T183,Encountering HTTP 500 Internal Server Error when trying to submit an invoice for approval.,Application Error,High,Closed
+T184,Cannot revoke API access tokens belonging to a former employee who departed yesterday.,Account Update,Low,Open
+T185,Need to update company logo and brand styling assets in our white-labeled client portal.,Account Update,High,Closed
+T186,User needs their primary email updated after IT department migrated company email domains.,Account Update,High,Open
+T187,The customer support queue list view takes an unacceptable amount of time to refresh.,Performance,High,Closed
+T188,Need an automated alert report triggered whenever daily refund requests exceed five thousand dollars.,Report,Low,In Progress
+T189,Unable to log in using my corporate email address after the recent SSO migration.,Login Issue,High,Open
+T190,Requesting immediate transfer of team admin role due to sudden managerial departure.,Account Update,Low,In Progress
+T191,Requesting account upgrade to access advanced API rate limits for upcoming product launch.,Account Update,High,Closed
+T192,Password reset email never arrives in my inbox or spam folder.,Login Issue,High,Open
+T193,Encountering 'SyntaxError: Unexpected token < in JSON at position 0' on order history page.,Application Error,Medium,Closed
+T194,User gets stuck on 'Verifying device posture' screen during zero-trust login check.,Login Issue,Low,In Progress
+T195,Audit log report export lacks timestamp column required for ISO27001 regulatory compliance.,Report,Low,In Progress
+T196,Encountering '405 Method Not Allowed' when submitting feedback via contact widget.,Application Error,Low,In Progress
+T197,"Switching between workspaces takes upwards of 30 seconds, showing a spinning progress circle.",Performance,Low,In Progress
+T198,Live collaborative document editing exhibits 3-second cursor sync lag between active users.,Performance,Low,Closed
+T199,Please downgrade our account tier from Business Enterprise to Professional at the next billing cycle.,Account Update,Low,In Progress
+T200,Database queries on the audit log page frequently time out with 504 Gateway Timeout errors.,Performance,Medium,Closed
+T201,Encountering 'Deadlock detected while waiting for lock' during concurrent ticket updates.,Application Error,High,Open
+T202,Search query auto-complete causes severe browser UI lag and high CPU utilization.,Performance,Medium,In Progress
+T203,Unable to remove old credit card details because system requires a backup card to be active.,Account Update,Medium,In Progress
+T204,GraphQL endpoint returns 'Internal server error: Schema execution exceeded max depth'.,Application Error,High,Open
+T205,Year-to-date revenue metric in the analytics summary differs from the general ledger total.,Report,High,Open
+T206,Requesting a change of registered company legal name and Tax ID in our business profile.,Account Update,Low,Closed
+T207,Application takes excessive time to re-establish broken WebSocket connections after network switch.,Performance,Low,Closed
+T208,Query execution plan on customer search is doing full table scans instead of using existing index.,Performance,Medium,In Progress
+T209,Data synchronization failed with '409 Conflict: Version mismatch between client and server'.,Application Error,High,In Progress
+T210,Website traffic analytics report counts internal development staff page views in total visits.,Report,Low,In Progress
+T211,PingFederate SSO handshake fails with error 'Invalid audience restriction in assertion'.,Login Issue,High,Closed
+T212,The mobile app crashes immediately on launch on Android 14 devices after today's update.,Application Error,High,In Progress
+T213,"Error 'Maximum concurrent sessions exceeded' prevents login, but user has no other active devices.",Login Issue,Low,Closed
+T214,"Receiving error 'Session expired, please log in again' immediately after entering valid credentials.",Login Issue,High,In Progress
+T215,Bulk email dispatching rate has dropped from 100 emails/sec to under 5 emails/sec.,Performance,Medium,Closed
+T216,Employee attendance report shows future leave requests as unexcused absences.,Report,Medium,In Progress
+T217,GraphQL queries requesting nested relationship fields take over 12 seconds to return.,Performance,Medium,Open
+T218,Request to adjust role permissions so junior analysts have read-only access to customer data.,Account Update,High,Closed
+T219,Memory leak detected in long-running browser sessions: tab crashes after 4 hours of use.,Performance,Low,Open
+T220,The server uptime and availability report is missing data points during last Tuesday's outage.,Report,High,Open
+T221,Cannot update profile picture; upload completes but old avatar persists after cache clear.,Account Update,High,Closed
+T222,Export queue processing backlog has reached over 400 delayed jobs.,Performance,Low,Closed
+T223,The mobile app takes over 20 seconds to reach the home screen from a cold start.,Performance,High,Closed
+T224,Update registered office telephone number on our official account verification record.,Account Update,High,Open
+T225,Hardware security key (YubiKey) is not recognized during WebAuthn login flow.,Login Issue,Medium,Open
+T226,Database index degradation on transactions table is slowing down daily checkout processing.,Performance,Medium,Open
+T227,Date picker component crashes the browser tab when selecting February 29th.,Application Error,Low,Open
+T228,Application UI elements overlap and become unclickable on ultrawide monitor resolutions.,Application Error,Medium,In Progress
+T229,Need an automated daily revenue report scheduled to be delivered to management at 8:00 AM.,Report,Low,Closed
+T230,Cannot login because verification code is sent to an old phone number that user no longer owns.,Login Issue,Medium,In Progress
+T231,User changed legal name due to marriage; need username and display name updated in directory.,Account Update,High,Closed
+T232,Authenticator app 6-digit TOTP code is rejected as invalid on the login screen.,Login Issue,High,Open
+T233,Application displays a blank white screen (White Screen of Death) when navigating to Analytics.,Application Error,High,Closed
+T234,Encountered 'OutOfMemoryError: Java heap space' during batch data processing job.,Application Error,Medium,Open
+T235,Frontend bundle includes duplicate dependencies causing slow JavaScript parsing on low-end laptops.,Performance,High,Closed
+T236,Application latency spiked significantly following the latest platform deployment yesterday.,Performance,High,Closed
+T237,"Exporting 1,000 customer records to Excel causes the entire application to hang for 5 minutes.",Performance,Low,Open
+T238,PDF previewer component crashes with 'Worker was destroyed' on multi-page invoices.,Application Error,Medium,Closed
+T239,Document scanner module crashes the mobile app when camera permissions are toggled.,Application Error,High,Open
+T240,Requesting permission to share view-only executive summary reports with external board members.,Report,Low,Open
+T241,"Payment processing webhook response times average over 8 seconds, risking client timeouts.",Performance,Medium,In Progress
+T242,Real-time chat messaging experiences noticeable 5-to-10 second delivery lag during meetings.,Performance,Low,In Progress
+T243,The web dashboard crashes with an unhandled TypeError exception after clicking 'Save Changes'.,Application Error,High,Open
+T244,Submitting the expense claim form triggers 'Database constraint violation: foreign key missing'.,Application Error,Low,Open
+T245,Profit and loss report shows incorrect currency exchange rates for European sales branches.,Report,High,Open
+T246,Report calculation worker experiences severe CPU throttling on the cloud compute cluster.,Performance,Low,Open
+T247,Fingerprint biometrics login on the iOS mobile app fails silently and falls back to password prompt.,Login Issue,Low,Open
+T248,Autocomplete dropdown takes 4 seconds to display suggestions after user stops typing.,Performance,Low,Closed
+T249,"Audit trail logging service crashed, resulting in missing activity logs for past 3 hours.",Application Error,Medium,Open
+T250,User locked in an infinite password change prompt loop: keeps asking for a new password.,Login Issue,Medium,Closed
