@@ -50,9 +50,9 @@ Automating this classification process using machine learning helps:
 | **Python** | Core programming language for data processing, modeling, and applications |
 | **Pandas** | Loading, cleaning, and inspecting tabular ticket data |
 | **NumPy** | Numerical operations and array handling |
-| **Scikit-learn** | Text feature extraction (TF-IDF), model training, pipelines, and evaluation metrics |
+| **Scikit-learn 1.8.0** | Text feature extraction (TF-IDF), model training, pipelines, and evaluation metrics |
 | **TF-IDF Vectorizer** | Converting text descriptions into numerical n-gram features |
-| **Scikit-learn Classifiers** | LinearSVC, Logistic Regression, and Multinomial Naive Bayes evaluated for category prediction |
+| **LinearSVC** | Linear Support Vector Classifier used for category prediction |
 | **Streamlit** | Local interactive web interface for testing ticket predictions |
 | **Matplotlib & Seaborn** | Creating exploratory data analysis plots and the confusion matrix chart |
 | **Joblib** | Saving and loading the trained model pipeline |
@@ -97,9 +97,9 @@ The preprocessing pipeline is implemented in `src/preprocessing.py`. It prepares
    - Converts all text to lowercase so words with different capitalizations (e.g., `"Login"` and `"login"`) are treated identically.
    - Removes punctuation and special characters using a regular expression (`[^a-z0-9\s]`), keeping only alphanumeric characters and spaces.
    - Replaces multiple consecutive spaces with a single space and trims whitespace.
-   - Retains negation words such as `"not"`, `"cannot"`, and `"unable"` to preserve critical negative context in problem descriptions.
+   - Retains negation words such as `"not"`, `"no"`, `"nor"`, `"never"`, and `"cannot"` during TF-IDF feature extraction. The vectorizer uses a customized English stop-word list that excludes these negation terms.
 4. **Usage in Training**:
-   - The cleaned text provides standardized, noise-free input features for TF-IDF feature extraction during model training directly in memory.
+   - The training script calls `preprocess_dataset()` from `src/preprocessing.py` before splitting and model fitting. The cleaned text provides standardized input features for TF-IDF feature extraction directly in memory.
 
 ---
 
@@ -123,32 +123,34 @@ Model development and evaluation are implemented in `src/train.py`.
 ### 1. Feature Extraction: TF-IDF
 Text descriptions are converted to numerical vectors using Scikit-learn's `TfidfVectorizer`:
 - **N-gram Range**: `(1, 2)` (unigrams and bigrams), allowing the model to capture single words (e.g., `"timeout"`) as well as key word pairs (e.g., `"cannot login"`, `"reset password"`).
-- **Stop Words**: Standard English stop words are removed to eliminate generic filler words.
+- **Stop Words**: A customized English stop-word list removes generic filler words while explicitly retaining negation terms such as `not`, `no`, `nor`, `never`, and `cannot`.
 - **Lowercasing**: Text is converted to lowercase during tokenization.
-- **Vocabulary Size**: 2,700 unique n-gram features learned from the training set.
+- **Vocabulary Size**: 2,720 unique n-gram features learned from the training set.
 
-### 2. Model Comparison and Selection
-Three classification algorithms were compared using 5-fold stratified cross-validation on the **200 training records only**. The 50 held-out test records are not used for model selection.
+### 2. Model Comparison and Final Classifier
 
-| Model | Mean CV Accuracy (± SD) | Mean CV Weighted F1-Score (± SD) |
+Three classification algorithms were compared using 5-fold stratified cross-validation on the **200 training records only**. The 50-record test partition is kept separate and is not used during model comparison.
+
+| Model | Mean CV Accuracy | Mean CV Weighted F1-Score |
 | :--- | :---: | :---: |
-| **LinearSVC** | 0.8150 ± 0.0406 | 0.8055 ± 0.0488 |
-| **Logistic Regression** | **0.8200 ± 0.0714** | **0.8109 ± 0.0793** |
-| **Multinomial Naive Bayes** | 0.7900 ± 0.0515 | 0.7813 ± 0.0552 |
+| **Linear Support Vector Machine (LinearSVC)** | **0.8150** | **0.8055** |
+| Logistic Regression | 0.8250 | 0.8164 |
+| Multinomial Naive Bayes | 0.7950 | 0.7873 |
 
-**Logistic Regression** was selected as the final classifier because it achieved the highest mean weighted F1-score (0.8109) during cross-validation on the training partition. The comparison uses identical stratified folds and a TF-IDF pipeline for each candidate.
+**LinearSVC remains the final classifier used by this project.** The comparison results are reported transparently; they do not change the implemented final model.
 
 ### 3. Training Setup
 - **Train-Test Split**: An 80:20 stratified split divides the dataset into 200 training tickets and 50 held-out test tickets.
 - **Stratification**: Preserves equal class proportions (10 test tickets per category) across both sets.
 - **Random State**: `random_state=42` ensures reproducible data splitting and model initialization.
-- **Pipeline Structure**: TF-IDF vectorization and the selected classifier are combined in a Scikit-learn `Pipeline`. During cross-validation, each fold fits its own vectorizer only on that fold’s training portion. The final vectorizer and classifier are fit on the complete 200-record training partition; the 50-record test partition remains untouched until final evaluation.
+- **Pipeline Structure**: TF-IDF vectorization and LinearSVC are combined in a Scikit-learn `Pipeline`. The vectorizer is fit only on the training set.
+- **Cross-Validation Isolation**: Candidate-model comparison uses only `X_train` and `y_train`. The held-out test set is reserved for the final evaluation, preventing it from influencing model selection.
 
 ---
 
 ## Model Evaluation
 
-The selected Logistic Regression model was evaluated on the **50 held-out test records** that were not used during model selection or training.
+The trained LinearSVC model was evaluated on the **50 held-out test records** that were not used during training.
 
 ### Held-Out Test Set Performance
 
@@ -269,7 +271,7 @@ python src/preprocessing.py
 ```
 
 ### 2. Train and Evaluate the Model
-To compare candidate models using training-only cross-validation, train the selected classifier, evaluate it on the held-out test partition, save the confusion matrix chart, and export the trained model artifact:
+To train the LinearSVC model on the dataset, evaluate metrics on the test partition, save the confusion matrix chart, and export the trained model artifact:
 ```powershell
 python src/train.py
 ```
@@ -330,7 +332,7 @@ To test the model, enter the following sample ticket description:
 
 ## Conclusion
 
-This project demonstrates a functional machine learning pipeline for automated customer support ticket triage. Combining TF-IDF n-gram vectorization with a Logistic Regression classifier achieves an **84.00% accuracy** and an **84.32% weighted F1-score** on the held-out test data. The system offers accessible testing through both a command-line interface (`src/predict.py`) and a user-friendly Streamlit web application (`src/app.py`).
+This project demonstrates a functional machine learning pipeline for automated customer support ticket triage. Combining TF-IDF n-gram vectorization with a Linear Support Vector Classifier achieves an **84.00% accuracy** and an **84.32% weighted F1-score** on unseen test data. The system offers accessible testing through both a command-line interface (`src/predict.py`) and a user-friendly Streamlit web application (`src/app.py`).
 
 ---
 
