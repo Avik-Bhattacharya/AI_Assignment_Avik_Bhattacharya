@@ -52,7 +52,7 @@ Automating this classification process using machine learning helps:
 | **NumPy** | Numerical operations and array handling |
 | **Scikit-learn** | Text feature extraction (TF-IDF), model training, pipelines, and evaluation metrics |
 | **TF-IDF Vectorizer** | Converting text descriptions into numerical n-gram features |
-| **LinearSVC** | Linear Support Vector Classifier used for category prediction |
+| **Scikit-learn Classifiers** | LinearSVC, Logistic Regression, and Multinomial Naive Bayes evaluated for category prediction |
 | **Streamlit** | Local interactive web interface for testing ticket predictions |
 | **Matplotlib & Seaborn** | Creating exploratory data analysis plots and the confusion matrix chart |
 | **Joblib** | Saving and loading the trained model pipeline |
@@ -128,36 +128,36 @@ Text descriptions are converted to numerical vectors using Scikit-learn's `Tfidf
 - **Vocabulary Size**: 2,700 unique n-gram features learned from the training set.
 
 ### 2. Model Comparison and Selection
-Three classification algorithms were compared using 5-fold stratified cross-validation on the 250 records:
+Three classification algorithms were compared using 5-fold stratified cross-validation on the **200 training records only**. The 50 held-out test records are not used for model selection.
 
-| Model | Mean CV Accuracy | Mean CV Weighted F1-Score |
+| Model | Mean CV Accuracy (± SD) | Mean CV Weighted F1-Score (± SD) |
 | :--- | :---: | :---: |
-| **Linear Support Vector Machine (LinearSVC)** | **0.8000** | **0.7967** |
-| **Logistic Regression** | 0.7960 | 0.7934 |
-| **Multinomial Naive Bayes** | 0.7920 | 0.7857 |
+| **LinearSVC** | 0.8150 ± 0.0406 | 0.8055 ± 0.0488 |
+| **Logistic Regression** | **0.8200 ± 0.0714** | **0.8109 ± 0.0793** |
+| **Multinomial Naive Bayes** | 0.7900 ± 0.0515 | 0.7813 ± 0.0552 |
 
-All three models showed comparable performance on this dataset. **LinearSVC** was selected as the final classifier because it achieved a slightly higher mean weighted F1-score (0.7967) and is well-suited for high-dimensional, sparse TF-IDF feature representations.
+**Logistic Regression** was selected as the final classifier because it achieved the highest mean weighted F1-score (0.8109) during cross-validation on the training partition. The comparison uses identical stratified folds and a TF-IDF pipeline for each candidate.
 
 ### 3. Training Setup
 - **Train-Test Split**: An 80:20 stratified split divides the dataset into 200 training tickets and 50 held-out test tickets.
 - **Stratification**: Preserves equal class proportions (10 test tickets per category) across both sets.
 - **Random State**: `random_state=42` ensures reproducible data splitting and model initialization.
-- **Pipeline Structure**: TF-IDF vectorization and LinearSVC are combined in a Scikit-learn `Pipeline`. The vectorizer is fit only on the training set to prevent data leakage.
+- **Pipeline Structure**: TF-IDF vectorization and the selected classifier are combined in a Scikit-learn `Pipeline`. During cross-validation, each fold fits its own vectorizer only on that fold’s training portion. The final vectorizer and classifier are fit on the complete 200-record training partition; the 50-record test partition remains untouched until final evaluation.
 
 ---
 
 ## Model Evaluation
 
-The trained LinearSVC model was evaluated on the **50 held-out test records** that were not used during training.
+The selected Logistic Regression model was evaluated on the **50 held-out test records** that were not used during model selection or training.
 
 ### Held-Out Test Set Performance
 
 | Metric | Score |
 | :--- | :---: |
 | **Accuracy** | **84.00%** |
-| **Weighted Precision** | **85.09%** |
+| **Weighted Precision** | **85.64%** |
 | **Weighted Recall** | **84.00%** |
-| **Weighted F1-Score** | **84.09%** |
+| **Weighted F1-Score** | **84.32%** |
 | **Training Records** | 200 |
 | **Testing Records** | 50 |
 
@@ -166,11 +166,11 @@ The trained LinearSVC model was evaluated on the **50 held-out test records** th
 | Category | Precision | Recall | F1-Score | Support |
 | :--- | :---: | :---: | :---: | :---: |
 | **Account Update** | 1.00 | 1.00 | 1.00 | 10 |
-| **Application Error** | 0.75 | 0.60 | 0.67 | 10 |
-| **Login Issue** | 0.89 | 0.80 | 0.84 | 10 |
+| **Application Error** | 0.67 | 0.60 | 0.63 | 10 |
+| **Login Issue** | 1.00 | 0.80 | 0.89 | 10 |
 | **Performance** | 0.62 | 0.80 | 0.70 | 10 |
 | **Report** | 1.00 | 1.00 | 1.00 | 10 |
-| **Weighted Average** | **0.85** | **0.84** | **0.84** | **50** |
+| **Weighted Average** | **0.86** | **0.84** | **0.84** | **50** |
 
 ### Confusion Matrix
 The confusion matrix chart is saved at `screenshots/confusion_matrix.png`:
@@ -269,7 +269,7 @@ python src/preprocessing.py
 ```
 
 ### 2. Train and Evaluate the Model
-To train the LinearSVC model on the dataset, evaluate metrics on the test partition, save the confusion matrix chart, and export the trained model artifact:
+To compare candidate models using training-only cross-validation, train the selected classifier, evaluate it on the held-out test partition, save the confusion matrix chart, and export the trained model artifact:
 ```powershell
 python src/train.py
 ```
@@ -330,7 +330,7 @@ To test the model, enter the following sample ticket description:
 
 ## Conclusion
 
-This project demonstrates a functional machine learning pipeline for automated customer support ticket triage. Combining TF-IDF n-gram vectorization with a Linear Support Vector Classifier achieves an **84.00% accuracy** and an **84.09% weighted F1-score** on unseen test data. The system offers accessible testing through both a command-line interface (`src/predict.py`) and a user-friendly Streamlit web application (`src/app.py`).
+This project demonstrates a functional machine learning pipeline for automated customer support ticket triage. Combining TF-IDF n-gram vectorization with a Logistic Regression classifier achieves an **84.00% accuracy** and an **84.32% weighted F1-score** on the held-out test data. The system offers accessible testing through both a command-line interface (`src/predict.py`) and a user-friendly Streamlit web application (`src/app.py`).
 
 ---
 
